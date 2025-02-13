@@ -1,11 +1,11 @@
-extends Spatial
-class_name PART
+
+extends Node3D
 
 var visited = false
-export(String) var type
+@export var type: String
 
 # unload the part if it is marked as visited
-func _process(delta):
+func _process(_delta):
 	if visited:
 		visited = false
 		ObjectPooling.queue_free_instance(self)

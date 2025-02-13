@@ -1,50 +1,48 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=4 uid="uid://denw2720wyjiy"]
 
-[ext_resource path="res://assets/models/corridor.material" type="Material" id=1]
-[ext_resource path="res://assets/materials/parts.tres" type="Material" id=2]
-[ext_resource path="res://scripts/PART.gd" type="Script" id=3]
+[ext_resource type="Material" path="res://assets/models/corridor.material" id="1"]
+[ext_resource type="Script" path="res://scripts/part.gd" id="3"]
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id="1"]
 resource_name = "straight"
-surfaces/0 = {
-"aabb": AABB( -8, 0, -41, 16, 50.3948, 82 ),
-"array_data": PoolByteArray( 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 36, 194, 130, 0, 0, 0, 0, 127, 0, 127, 0, 0, 0, 0, 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 36, 194, 0, 127, 0, 0, 126, 0, 0, 127, 0, 48, 0, 0, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 36, 194, 130, 0, 0, 0, 0, 127, 0, 127, 172, 47, 0, 0, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 36, 194, 0, 126, 0, 0, 127, 0, 0, 127, 255, 47, 239, 5, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 36, 194, 167, 89, 0, 0, 89, 89, 0, 127, 4, 48, 192, 4, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 36, 194, 0, 126, 0, 0, 127, 0, 0, 127, 19, 52, 239, 5, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 36, 194, 129, 0, 0, 0, 0, 127, 0, 127, 163, 47, 224, 41, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 36, 194, 167, 89, 0, 0, 89, 89, 0, 127, 15, 52, 192, 4, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 36, 194, 129, 0, 0, 0, 0, 127, 0, 127, 19, 52, 224, 41, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 36, 194, 167, 167, 0, 0, 167, 89, 0, 127, 3, 48, 0, 0, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 36, 194, 167, 167, 0, 0, 167, 89, 0, 127, 17, 52, 0, 0, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 36, 194, 0, 129, 0, 0, 129, 0, 0, 127, 20, 52, 140, 19, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 36, 194, 0, 127, 0, 0, 130, 0, 0, 129, 0, 48, 0, 0, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 36, 194, 126, 0, 0, 0, 0, 127, 0, 129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 194, 0, 127, 0, 0, 129, 0, 0, 129, 0, 0, 0, 0, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 36, 194, 0, 126, 0, 0, 129, 0, 0, 129, 255, 47, 239, 5, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 36, 194, 126, 0, 0, 0, 0, 127, 0, 129, 172, 47, 0, 0, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 36, 194, 0, 126, 0, 0, 129, 0, 0, 129, 19, 52, 239, 5, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 36, 194, 89, 89, 0, 0, 167, 89, 0, 129, 4, 48, 192, 4, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 36, 194, 89, 89, 0, 0, 167, 89, 0, 129, 15, 52, 192, 4, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 36, 194, 127, 0, 0, 0, 0, 127, 0, 129, 163, 47, 224, 41, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 36, 194, 89, 167, 0, 0, 89, 89, 0, 129, 3, 48, 0, 0, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 36, 194, 127, 0, 0, 0, 0, 127, 0, 129, 19, 52, 224, 41, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 36, 194, 0, 129, 0, 0, 127, 0, 0, 129, 20, 52, 140, 19, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 36, 194, 89, 167, 0, 0, 89, 89, 0, 129, 17, 52, 0, 0, 0, 0, 0, 0, 74, 148, 73, 66, 0, 0, 36, 194, 0, 129, 0, 0, 127, 0, 0, 129, 82, 54, 140, 19, 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 36, 66, 130, 0, 0, 0, 0, 127, 0, 129, 0, 0, 0, 0, 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 36, 66, 0, 127, 0, 0, 126, 0, 0, 129, 0, 48, 0, 0, 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 0, 128, 130, 0, 0, 0, 0, 127, 0, 129, 0, 0, 254, 59, 0, 0, 160, 64, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 0, 0, 127, 0, 0, 129, 0, 48, 253, 59, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 36, 66, 130, 0, 0, 0, 0, 127, 0, 129, 172, 47, 0, 0, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 36, 66, 0, 126, 0, 0, 127, 0, 0, 129, 255, 47, 239, 5, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 0, 128, 130, 0, 0, 0, 0, 127, 0, 129, 172, 47, 254, 59, 0, 0, 160, 64, 0, 0, 128, 63, 0, 0, 0, 128, 0, 126, 0, 0, 127, 0, 0, 129, 255, 47, 101, 41, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 36, 66, 167, 89, 0, 0, 89, 89, 0, 129, 4, 48, 192, 4, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 36, 66, 0, 126, 0, 0, 127, 0, 0, 129, 19, 52, 239, 5, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 0, 128, 167, 89, 0, 0, 89, 89, 0, 129, 4, 48, 59, 41, 0, 0, 224, 64, 0, 0, 128, 63, 0, 0, 0, 128, 0, 126, 0, 0, 127, 0, 0, 129, 19, 52, 101, 41, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 36, 66, 129, 0, 0, 0, 0, 127, 0, 129, 163, 47, 224, 41, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 36, 66, 167, 89, 0, 0, 89, 89, 0, 129, 15, 52, 192, 4, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 0, 128, 129, 0, 0, 0, 0, 127, 0, 129, 163, 47, 72, 59, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 0, 128, 167, 89, 0, 0, 89, 89, 0, 129, 15, 52, 59, 41, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 36, 66, 129, 0, 0, 0, 0, 127, 0, 129, 19, 52, 224, 41, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 36, 66, 167, 167, 0, 0, 167, 89, 0, 129, 3, 48, 0, 0, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 0, 128, 129, 0, 0, 0, 0, 127, 0, 129, 19, 52, 72, 59, 0, 0, 0, 65, 74, 148, 69, 66, 0, 0, 0, 128, 167, 167, 0, 0, 167, 89, 0, 129, 3, 48, 94, 41, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 36, 66, 167, 167, 0, 0, 167, 89, 0, 129, 17, 52, 0, 0, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 36, 66, 0, 129, 0, 0, 129, 0, 0, 129, 20, 52, 140, 19, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 0, 128, 167, 167, 0, 0, 167, 89, 0, 129, 17, 52, 94, 41, 0, 0, 224, 64, 74, 148, 73, 66, 0, 0, 0, 128, 0, 129, 0, 0, 129, 0, 0, 129, 20, 52, 17, 59, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 36, 66, 0, 127, 0, 0, 130, 0, 0, 127, 0, 48, 0, 0, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 36, 66, 126, 0, 0, 0, 0, 127, 0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 66, 0, 127, 0, 0, 129, 0, 0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 0, 0, 130, 0, 0, 127, 0, 0, 253, 59, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 0, 0, 129, 0, 0, 127, 0, 48, 253, 59, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 0, 128, 126, 0, 0, 0, 0, 127, 0, 127, 0, 0, 254, 59, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 36, 66, 0, 126, 0, 0, 129, 0, 0, 127, 255, 47, 239, 5, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 36, 66, 126, 0, 0, 0, 0, 127, 0, 127, 172, 47, 0, 0, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 0, 128, 0, 126, 0, 0, 129, 0, 0, 127, 255, 47, 101, 41, 0, 0, 160, 192, 0, 0, 128, 63, 0, 0, 0, 128, 126, 0, 0, 0, 0, 127, 0, 127, 172, 47, 254, 59, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 36, 66, 0, 126, 0, 0, 129, 0, 0, 127, 19, 52, 239, 5, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 36, 66, 89, 89, 0, 0, 167, 89, 0, 127, 4, 48, 192, 4, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 0, 128, 0, 126, 0, 0, 129, 0, 0, 127, 19, 52, 101, 41, 0, 0, 224, 192, 0, 0, 128, 63, 0, 0, 0, 128, 89, 89, 0, 0, 167, 89, 0, 127, 4, 48, 59, 41, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 36, 66, 89, 89, 0, 0, 167, 89, 0, 127, 15, 52, 192, 4, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 36, 66, 127, 0, 0, 0, 0, 127, 0, 127, 163, 47, 224, 41, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 0, 128, 89, 89, 0, 0, 167, 89, 0, 127, 15, 52, 59, 41, 0, 0, 0, 193, 0, 0, 0, 64, 0, 0, 0, 128, 127, 0, 0, 0, 0, 127, 0, 127, 163, 47, 72, 59, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 36, 66, 89, 167, 0, 0, 89, 89, 0, 127, 3, 48, 0, 0, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 36, 66, 127, 0, 0, 0, 0, 127, 0, 127, 19, 52, 224, 41, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 0, 128, 89, 167, 0, 0, 89, 89, 0, 127, 3, 48, 94, 41, 0, 0, 0, 193, 74, 148, 69, 66, 0, 0, 0, 128, 127, 0, 0, 0, 0, 127, 0, 127, 19, 52, 72, 59, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 36, 66, 0, 129, 0, 0, 127, 0, 0, 127, 20, 52, 140, 19, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 36, 66, 89, 167, 0, 0, 89, 89, 0, 127, 17, 52, 0, 0, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 0, 128, 0, 129, 0, 0, 127, 0, 0, 127, 20, 52, 17, 59, 0, 0, 224, 192, 74, 148, 73, 66, 0, 0, 0, 128, 89, 167, 0, 0, 89, 89, 0, 127, 17, 52, 94, 41, 0, 0, 0, 0, 74, 148, 73, 66, 0, 0, 36, 66, 0, 129, 0, 0, 127, 0, 0, 127, 82, 54, 140, 19, 0, 0, 0, 0, 74, 148, 73, 66, 0, 0, 0, 128, 0, 129, 0, 0, 127, 0, 0, 127, 82, 54, 17, 59 ),
-"array_index_data": PoolByteArray( 1, 0, 53, 0, 14, 0, 1, 0, 29, 0, 53, 0, 0, 0, 32, 0, 28, 0, 0, 0, 2, 0, 32, 0, 3, 0, 37, 0, 33, 0, 3, 0, 5, 0, 37, 0, 4, 0, 41, 0, 36, 0, 4, 0, 7, 0, 41, 0, 6, 0, 44, 0, 40, 0, 6, 0, 8, 0, 44, 0, 9, 0, 48, 0, 45, 0, 9, 0, 10, 0, 48, 0, 11, 0, 77, 0, 49, 0, 11, 0, 25, 0, 77, 0, 12, 0, 53, 0, 54, 0, 12, 0, 14, 0, 53, 0, 13, 0, 59, 0, 16, 0, 13, 0, 55, 0, 59, 0, 15, 0, 62, 0, 17, 0, 15, 0, 58, 0, 62, 0, 18, 0, 66, 0, 19, 0, 18, 0, 63, 0, 66, 0, 20, 0, 71, 0, 22, 0, 20, 0, 67, 0, 71, 0, 21, 0, 75, 0, 24, 0, 21, 0, 70, 0, 75, 0, 23, 0, 77, 0, 25, 0, 23, 0, 74, 0, 77, 0, 27, 0, 53, 0, 29, 0, 27, 0, 52, 0, 53, 0, 26, 0, 32, 0, 30, 0, 26, 0, 28, 0, 32, 0, 31, 0, 37, 0, 35, 0, 31, 0, 33, 0, 37, 0, 34, 0, 41, 0, 39, 0, 34, 0, 36, 0, 41, 0, 38, 0, 44, 0, 42, 0, 38, 0, 40, 0, 44, 0, 43, 0, 48, 0, 46, 0, 43, 0, 45, 0, 48, 0, 47, 0, 77, 0, 76, 0, 47, 0, 49, 0, 77, 0, 50, 0, 53, 0, 52, 0, 50, 0, 54, 0, 53, 0, 51, 0, 59, 0, 55, 0, 51, 0, 57, 0, 59, 0, 56, 0, 62, 0, 58, 0, 56, 0, 60, 0, 62, 0, 61, 0, 66, 0, 63, 0, 61, 0, 64, 0, 66, 0, 65, 0, 71, 0, 67, 0, 65, 0, 69, 0, 71, 0, 68, 0, 75, 0, 70, 0, 68, 0, 73, 0, 75, 0, 72, 0, 77, 0, 74, 0, 72, 0, 76, 0, 77, 0 ),
-"blend_shape_data": [  ],
-"format": 97559,
+_surfaces = [{
+"aabb": AABB(-8, 0, -41, 16, 50.3948, 82),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAAA+AAAAAACA9T0AAAAAAOD/PQDgvTgAgAA+AACYOABggj4A4L04AGD0PQAAPD0A4IE+AACYOABggj4AADw9AGAAPgAAAAAAIII+AAAAAACAgj4AgHE6AAAAPgAAAAAAAAAAAAAAAAAAAAAAAAAAAOD/PQDgvTgAgPU9AAAAAABggj4A4L04AIAAPgAAmDgA4IE+AACYOABg9D0AADw9AGAAPgAAAAAAYII+AAA8PQCAgj4AgHE6ACCCPgAAAAAAQMo+AIBxOgAAAAAAAAAAAAAAPgAAAAAAAAAAAMB/PwAAAD4AoH8/AID1PQAAAAAA4P89AOC9OACA9T0AwH8/AOD/PQCgLD0AgAA+AACYOABggj4A4L04AIAAPgBgJz0AYII+AKAsPQBg9D0AADw9AOCBPgAAmDgAYPQ9AABpPwDggT4AYCc9AGCCPgAAPD0AYAA+AAAAAABggj4AAGk/AGAAPgDAKz0AIII+AAAAAACAgj4AgHE6ACCCPgDAKz0AgII+ACBiPwAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoH8/AAAAPgCgfz8AAAAAAMB/PwDg/z0A4L04AID1PQAAAAAA4P89AKAsPQCA9T0AwH8/AGCCPgDgvTgAgAA+AACYOABggj4AoCw9AIAAPgBgJz0A4IE+AACYOABg9D0AADw9AOCBPgBgJz0AYPQ9AABpPwBgAD4AAAAAAGCCPgAAPD0AYAA+AMArPQBggj4AAGk/AICCPgCAcToAIII+AAAAAACAgj4AIGI/ACCCPgDAKz0AQMo+AIBxOgBAyj4AIGI/"),
+"format": 34359742487,
 "index_count": 168,
-"material": ExtResource( 1 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 78
-}
+"index_data": PackedByteArray("AQA1AA4AAQAdADUAAAAgABwAAAACACAAAwAlACEAAwAFACUABAApACQABAAHACkABgAsACgABgAIACwACQAwAC0ACQAKADAACwBNADEACwAZAE0ADAA1ADYADAAOADUADQA7ABAADQA3ADsADwA+ABEADwA6AD4AEgBCABMAEgA/AEIAFABHABYAFABDAEcAFQBLABgAFQBGAEsAFwBNABkAFwBKAE0AGwA1AB0AGwA0ADUAGgAgAB4AGgAcACAAHwAlACMAHwAhACUAIgApACcAIgAkACkAJgAsACoAJgAoACwAKwAwAC4AKwAtADAALwBNAEwALwAxAE0AMgA1ADQAMgA2ADUAMwA7ADcAMwA5ADsAOAA+ADoAOAA8AD4APQBCAD8APQBAAEIAQQBHAEMAQQBFAEcARABLAEYARABJAEsASABNAEoASABMAE0A"),
+"material": ExtResource("1"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 78,
+"vertex_data": PackedByteArray("AACgQAAAAAAAACTCAACgQAAAAAAAACTCAACgQAAAgD8AACTCAACgQAAAgD8AACTCAADgQAAAgD8AACTCAADgQAAAgD8AACTCAAAAQQAAAEAAACTCAAAAQQAAAEAAACTCAAAAQUqURUIAACTCAAAAQUqURUIAACTCAADgQEqUSUIAACTCAADgQEqUSUIAACTCAACgwAAAAAAAACTCAACgwAAAAAAAACTCAAAAAAAAAAAAACTCAACgwAAAgD8AACTCAACgwAAAgD8AACTCAADgwAAAgD8AACTCAADgwAAAgD8AACTCAAAAwQAAAEAAACTCAAAAwQAAAEAAACTCAAAAwUqURUIAACTCAAAAwUqURUIAACTCAADgwEqUSUIAACTCAADgwEqUSUIAACTCAAAAAEqUSUIAACTCAACgQAAAAAAAACRCAACgQAAAAAAAACRCAACgQAAAAAAAAACAAACgQAAAAAAAAACAAACgQAAAgD8AACRCAACgQAAAgD8AACRCAACgQAAAgD8AAACAAACgQAAAgD8AAACAAADgQAAAgD8AACRCAADgQAAAgD8AACRCAADgQAAAgD8AAACAAADgQAAAgD8AAACAAAAAQQAAAEAAACRCAAAAQQAAAEAAACRCAAAAQQAAAEAAAACAAAAAQQAAAEAAAACAAAAAQUqURUIAACRCAAAAQUqURUIAACRCAAAAQUqURUIAAACAAAAAQUqURUIAAACAAADgQEqUSUIAACRCAADgQEqUSUIAACRCAADgQEqUSUIAAACAAADgQEqUSUIAAACAAACgwAAAAAAAACRCAACgwAAAAAAAACRCAAAAAAAAAAAAACRCAAAAAAAAAAAAAACAAACgwAAAAAAAAACAAACgwAAAAAAAAACAAACgwAAAgD8AACRCAACgwAAAgD8AACRCAACgwAAAgD8AAACAAACgwAAAgD8AAACAAADgwAAAgD8AACRCAADgwAAAgD8AACRCAADgwAAAgD8AAACAAADgwAAAgD8AAACAAAAAwQAAAEAAACRCAAAAwQAAAEAAACRCAAAAwQAAAEAAAACAAAAAwQAAAEAAAACAAAAAwUqURUIAACRCAAAAwUqURUIAACRCAAAAwUqURUIAAACAAAAAwUqURUIAAACAAADgwEqUSUIAACRCAADgwEqUSUIAACRCAADgwEqUSUIAAACAAADgwEqUSUIAAACAAAAAAEqUSUIAACRCAAAAAEqUSUIAAACA/3///wAAAAD///+/AAAAAP9///9sAAAA////vwAAAAD/v//fAAAAAP///78AAAAA/3///wAAAAD/v//fAAAAAP9///8AAAAA/z//3wAAAAD/P//fG+zNTQAA/78AAAAAAAD/PwAAAAD/fwAAAAAAAAAA/z9UQU5DAAD/PwAAAAD/fwAAAAAAAAAA/z8AAAAA/z//HyBtYXT/P/8fAAAAAP9/AAAAAAAA/7//HwAAAAD/fwAAfQoJff///z9zdG9t/7//H2luZXP///8/ZGVmaf9/AABFUlRF////P1JMRF//fwAARFNfVf///z9bY3Vz/38AAGRlZmn///8/MV0jZP9/AABlIERJ////P0VfQlX/v/8fCltjdf///z9fZGVm/7//HzoyXSP///8/bmUgU/9/AABMQVJf/7//H0lDS1//fwAAW2N1c/+//x9kZWZp/38AADNdI2T/P/8fZSBNT/9/AABOU0hB/z//H1tjdXP/P/8fZGVmaQAA/z80XSNk/z//H2UgTk8AAP8/X1VTRQAA/791c3Rv/3///2ZpbmUAAP+/I2RlZgAA/79NT0RFAAD/v1RSSVj/f///RApbYwAA/79tX2Rl/3///3M6Nl0AAP+/aW5lIP9///9TRUQKAAD/v3RvbV//P//fbmVzOgAA/79lZmlu/z//31JFRU7/P//fVVNFRP9///8AgAZB/z//38AkAQD/f////wAAAP+//98mAAAA/3///wAAAAD/v//fAIAGQf9////AJAEA////v0wBAAD/v//fJwAAAP///78AAAAA/7//3wCABkH///+/wCQBAP///79DAwAA")
+}]
 
-[node name="CORRIDOR_SPACE_0" type="Spatial"]
-script = ExtResource( 3 )
+[node name="CORRIDOR_SPACE_0" type="Node3D"]
+script = ExtResource("3")
 type = "CORRIDOR"
 
-[node name="straight" type="MeshInstance" parent="."]
-transform = Transform( 1.7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+[node name="straight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("1")
 
-[node name="LANE" type="Spatial" parent="."]
+[node name="LANE" type="Node3D" parent="."]
 
-[node name="0" type="Position3D" parent="LANE"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39 )
+[node name="0" type="Marker3D" parent="LANE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39)
 
-[node name="1" type="Position3D" parent="LANE"]
+[node name="1" type="Marker3D" parent="LANE"]
 
-[node name="2" type="Position3D" parent="LANE"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43 )
+[node name="2" type="Marker3D" parent="LANE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43)
 
-[node name="BACK" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41 )
+[node name="BACK" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41)
 
-[node name="FRONT" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41 )
+[node name="FRONT" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
 
-[node name="FRONT_DIRECTION" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
+[node name="FRONT_DIRECTION" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
 
-[node name="OBSTACLES" type="Spatial" parent="."]
+[node name="OBSTACLES" type="Node3D" parent="."]

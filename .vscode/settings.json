@@ -1,0 +1,8 @@
+{
+    "godotTools.editorPath.godot4": "c:\\Users\\bclar\\Desktop\\Godot 4.3.exe"
+
+    "[gdscript]": {
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false
+    }
+}

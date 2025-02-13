@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var coins = 0
 var parts = {}
@@ -32,17 +32,17 @@ func _ready():
 	prepare_parts()
 	preparte_obstacles()
 	preparte_obstacle_scenes()
-	Globals.connect("on_collect", self, "on_collect")
-	Globals.connect("on_obstacle", self, "on_obstacle")
-	$Control/SPEEDBTN.connect("pressed", self, "on_speed")
-	Globals.connect("on_unload_part", self, "on_unload_part")
-	Globals.connect("on_coin_magnet_collision", self, "on_coin_magnet_collision")
+	Globals.connect("on_collect", Callable(self, "on_collect"))
+	Globals.connect("on_obstacle", Callable(self, "on_obstacle"))
+	$Control/SPEEDBTN.connect("pressed", Callable(self, "on_speed"))
+	Globals.connect("on_unload_part", Callable(self, "on_unload_part"))
+	Globals.connect("on_coin_magnet_collision", Callable(self, "on_coin_magnet_collision"))
 	
 	# spawn a few parts in the beginning
 	# the index makes sure no obstacles are spawned
 	for i in 5:
 		spawn_next_part(i)
-		yield(get_tree(), "idle_frame")
+		await get_tree().process_frame
 
 func _process(delta):
 	current_speed += delta * 0.4
@@ -103,8 +103,8 @@ func _process(delta):
 	# check if the current lane point is on a different part
 	# than the next one, if it is, mark the current part for unloading
 	if part_lane_coordinates[0].name != part_lane_coordinates[1].name:
-		if part_free_queue.find($PARTS.get_node(part_lane_coordinates[0].name)) == -1:
-			part_free_queue.push_back($PARTS.get_node(part_lane_coordinates[0].name))
+		if part_free_queue.find($PARTS.get_node(NodePath(part_lane_coordinates[0].name))) == -1:
+			part_free_queue.push_back($PARTS.get_node(NodePath(part_lane_coordinates[0].name)))
 	
 	var current_lane_coordinate = part_lane_coordinates[0].point.global_transform.origin
 	
@@ -213,9 +213,9 @@ func initialize_part(part, part_instance, index):
 			var object_instance = null
 			# override behaviour for some pickups and obstacles
 			if obstacle.name.begins_with("COIN"):
-				object_instance = ObjectPooling.load_from_pool("res://scenes/COIN.tscn")
+				object_instance = ObjectPooling.load_from_pool("res://scenes/coin.tscn")
 			elif pickups.find(obstacle.name.split('_')[0]) != -1:
-				object_instance = ObjectPooling.load_from_pool("res://scenes/" + pickups[randi()%pickups.size()] + ".tscn")
+				object_instance = ObjectPooling.load_from_pool("res://scenes/" + pickups[randi()%pickups.size()].to_lower() + ".tscn")
 			else:
 				var obstacle_type = obstacle.name.split('_')[0]
 				var obstacle_file = obstacle_scenes[obstacle_type + "_" + themes[current_theme_index]][randi()%obstacle_scenes[obstacle_type + "_" + themes[current_theme_index]].size()]
@@ -229,10 +229,10 @@ func prepare_parts():
 	# this method gets all scenes inside res://scenes/parts
 	# and stores them inside parts by their theme (Space...)
 	# to store their scene paths
-	var dir = Directory.new()
 	var path = "res://scenes/parts"
-	if dir.open(path) == OK:
-		dir.list_dir_begin()
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		var file_name = dir.get_next()
 		while file_name != "":
 			if !dir.current_is_dir():
@@ -247,24 +247,24 @@ func prepare_parts():
 				parts[part.theme].push_back(part) 
 			file_name = dir.get_next()
 	else:
-		print("WORLD.gd: error loading res://scenes/parts/*")
+		print("world.gd: error loading res://scenes/parts/*")
 
 func preparte_obstacles():
 	# this method gets all scenes inside res://scenes/obstacles
 	# and stores them inside obstacle_types  by their type (middle, single, side)
 	# to store their scene path inside the respective array
-	var file = File.new()
-	if file.open("res://compiled_parts.tres", File.READ) != 0:
-		print("World.gd: error reading compiled_parts.tres")
+	var resource = ResourceLoader.load("res://compiled_parts.tres")
+	if resource == null:
+		print("world.gd: error loading compiled_parts.tres")
 	else:
-		obstacle_layouts = JSON.parse(file.get_as_text()).result
+		obstacle_layouts = resource.data
 
 # get all obstacles and store them inside a dictionary for quick retrieval
 func preparte_obstacle_scenes():
-	var dir = Directory.new()
 	var path = "res://scenes/obstacle_scenes"
-	if dir.open(path) == OK:
-		dir.list_dir_begin()
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		var file_name = dir.get_next()
 		while file_name != "":
 			if !dir.current_is_dir():
